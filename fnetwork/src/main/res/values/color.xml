@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--dialog-->
+    <color name="catalog_text">#808080</color>
+    <color name="dialog_bg">#F5F5F5</color>
+    <color name="color_blue">#007AFF</color>
+    <color name="black">#000000</color>
+</resources>
