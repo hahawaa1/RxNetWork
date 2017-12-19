@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.flyinbed.fnetwork.RetrofitClient
+import com.flyinbed.fnetwork.error_exception.ApiErrorHelper
 
 
 /**
@@ -19,6 +20,7 @@ class App : Application() {
         SP = getSharedPreferences("config", Context.MODE_PRIVATE)
         EDIT = SP?.edit()
         instance = RetrofitClient.getInstance(this, ApiService.BASE_URL, ApiService::class.java,true).mApi
+        ApiErrorHelper.hint2show(true)
     }
 
     companion object {
