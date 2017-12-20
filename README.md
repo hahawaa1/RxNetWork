@@ -13,3 +13,5 @@
 	dependencies {
 	        compile 'com.github.hahawaa1:RxNetWork:v1.0.1'
 	}
+
+使用详情 http://blog.csdn.net/flyinbed_/article/details/78842524

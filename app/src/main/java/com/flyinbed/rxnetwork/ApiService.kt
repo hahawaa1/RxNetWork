@@ -9,9 +9,11 @@ import rx.Observable
 
 /**
  * Created by flyinbed on 17/12/11.
+ *
  */
 interface ApiService {
     //http://api.douban.com/v2/movie/top250
+    //当RetrofitClient初始化的时候第四个参数为true的时候BaseResponseEntity自定义
     companion object{
         val BASE_URL : String
             get() = "http://api.douban.com"

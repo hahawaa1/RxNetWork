@@ -32,12 +32,15 @@ public class MyGsonResponseBodyConverter<T> implements Converter<ResponseBody,T>
     @Override
     public T convert(ResponseBody value) throws IOException {
         String response = value.string();
+        //BaseResponseEntity 替换成自己定义的类
         BaseResponseEntity result = mGson.fromJson(response, BaseResponseEntity.class);
-//        判断code可自己改动
+//        返回值判断改为自己接口定义的参数
         if (result.code != 200) {
             value.close();
+            //第一个参数code码第二个参数异常提示信息
             throw new ApiException(result.code, result.message);
         }
+
         MediaType mediaType = value.contentType();
         Charset charset = mediaType != null ? mediaType.charset(UTF_8) : UTF_8;
         ByteArrayInputStream bis = new ByteArrayInputStream(response.getBytes());

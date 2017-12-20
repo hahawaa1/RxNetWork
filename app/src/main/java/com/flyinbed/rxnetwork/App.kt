@@ -19,8 +19,16 @@ class App : Application() {
         //初始化通用的SP&EDIT
         SP = getSharedPreferences("config", Context.MODE_PRIVATE)
         EDIT = SP?.edit()
+
+        //第一个参数上下文，第二个url，第三个自定义接口，第四个参数，是否使用自定义异常管理
         instance = RetrofitClient.getInstance(this, ApiService.BASE_URL, ApiService::class.java,true).mApi
+
+        //是否Toast异常显示 true为显示 false为不现实
         ApiErrorHelper.hint2show(true)
+
+        //true为Toast false为dialog，默认为dialog
+        ApiErrorHelper.dialog2Toast(false)
+
     }
 
     companion object {

@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 
     fun network(){
         mCompositeSubscription = CompositeSubscription()
+        //HttpObserver<BaseResponseEntity<List<Top>>>(this,true)当为true的时候显示加载dialog，false则不显示
         mCompositeSubscription?.add(App.instance?.getTop()?.applySchedulers()?.subscribe(object : HttpObserver<BaseResponseEntity<List<Top>>>(this,true){
-
 
             override fun success(t:BaseResponseEntity<List<Top>>) {
 
