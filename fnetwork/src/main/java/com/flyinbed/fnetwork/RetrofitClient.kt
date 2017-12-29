@@ -24,7 +24,7 @@ class RetrofitClient<T> private constructor(context: Context, baseUrl:String, cl
     var cache : Cache? = null
     var okHttpClient : OkHttpClient? = null
     var retrofit : Retrofit? = null
-    val DEFAULT_TIMEOUT : Long = 20
+    val DEFAULT_TIMEOUT : Long = 40
     val url = baseUrl
     val clazs = clazz
     var mApi : T? = null
